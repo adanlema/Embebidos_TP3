@@ -6,6 +6,7 @@ DOC_DIR = $(OUT_DIR)/doc
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o,$(SRC_FILES))
 
+.DEFAULT_GOAL := all
 
 $(OUT_DIR):
 	mkdir $(OUT_DIR)

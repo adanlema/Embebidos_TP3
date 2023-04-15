@@ -1,6 +1,6 @@
 /**
  * @file main.c
- * @brief Archivo: alumno.h
+ * @brief Archivo: main.c
  * Este archivo es el programa principal de nuestro trabajo.
  */
 
@@ -23,10 +23,14 @@
 //! Implementacion del codigo.
 int main(void) {
 
-    static const struct alumno_s adan = {.apellido = "Lema", .nombre = "Adan", .dni = 41984217};
-    char                         cadena[100];
-    if (Serializar(&adan, cadena, sizeof(cadena)) >= 0) {
+    const alumno_pt adan = CrearAlumno("Lema", "Adan", 41984217);
+    char            cadena[100];
+    if (SerializarAlumno(adan, cadena, sizeof(cadena)) >= 0) {
         printf("%s\n", cadena);
+        if (!TipoAlumno(adan))
+            printf("Se creo una estructura con memoria estatica.\n");
+        else
+            printf("Se creo una estructura con memoria dinamica.\n");
     } else {
         printf("Ocurrio un error al serializar.\n");
     }
