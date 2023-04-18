@@ -10,4 +10,4 @@
 ### make doc
     Genera la documentacion del proyecto.
 ### define DINAMIC
-    Esta variable se encarga de decirle al compilador si utilizaremos memoria dinamica o estatica para crear la estructura alumno. Si optamos por memoria dinamica debemos comentar la linea "#define DINAMIC 0" en el archivo "alumno.h", caso contrario que quieramos utilizar memoria estatica no debemos modificar nuestro codigo.
+    Esta variable se encarga de decirle al compilador si utilizaremos memoria dinamica o estatica para crear la estructura alumno. Si optamos por memoria dinamica debemos borrar la parte de codigo "-D DINAMIC=0" del archivo makefile, esta se encuentra en la linea 22. En caso de que quieramos utilizar memoria estatica no debemos modificar el makefile.

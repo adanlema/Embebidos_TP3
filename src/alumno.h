@@ -12,13 +12,6 @@
 #include <stdbool.h>
 /*==================[macros]=================================================*/
 #define SIZE_DATA 50 //!< Tamaño del dato.
-/**
- * @brief Eleccion de memoria estatica o dinamica
- * Podemos optar si queremos elegir guardar en memoria dinamica o estatica nuestra
- * estructura alumno. Si queremos que sea mediante memoria dinamica, se comenta la linea
- * "#define DINAMIC 0", si queremos que sea con memoria estatica no se corrige nada.
- */
-#define DINAMIC 0
 /*==================[typedef]================================================*/
 //! Puntero a la estructura que tendra los datos del alumno
 typedef struct alumno_s * alumno_pt;
@@ -26,7 +19,7 @@ typedef struct alumno_s * alumno_pt;
 
 /*==================[external functions declaration]=========================*/
 
-/** @brief Funcion Serializar
+/** @brief Funcion Serializar:
  *  Esta funcion se encargara de serializar los datos de la estructura alumno.
  *  Debemos pasarle un puntero a la estrucutra alumno, un cadena en la cual se
  *  guardara el resultado y por ultimo el tamaño de la cadena. Se pasa el tama
@@ -37,7 +30,7 @@ typedef struct alumno_s * alumno_pt;
  * **/
 int SerializarAlumno(const struct alumno_s * estructura, char cadena[], uint8_t tamaño);
 /**
- * @brief Funcion CrearAlumno
+ * @brief Funcion CrearAlumno:
  * Esta funcion devolvera un puntero constante a una estructura alumno, la funcion va a
  * crear un alumno con los datos proporcionados.
  * @param apellido
@@ -48,6 +41,7 @@ const alumno_pt CrearAlumno(char * apellido, char * nombre, uint32_t documento);
 /**
  * @brief Funcion TipoAlumno:
  * Esta funcion nos indicara si la estructura fue creada con memoria estatica o dinamica.
+ * La utilizaremos solo para corroborar que nuestro programa funciona correctamente.
  * @param alumno    Puntero a la estructura.
  * @return true  Memoria Dinamica
  * @return false Memoria Estatica
